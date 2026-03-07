@@ -64,7 +64,7 @@ df.sort_values("Age")
 df["Age"].unique() 
 
 #Data Cleaning
-
+"""
 #to check empty data
 print(df.isnull().sum())
 
@@ -79,3 +79,107 @@ df.drop_duplicates()
 
 #rename 
 df.rename(columns={"Salary":"Income"}, inplace=True)
+"""
+#FEATURE ENGINEERING : CREATING DATA FROM EXISTING DATA
+
+df['Total_income_tax'] = df['Salary'] *5/100
+
+#Apply F(x)
+
+def salary_category(x):
+    if x > 60000:
+        return "High"
+    elif x > 40000:
+        return "Medium"
+    else:
+        return "Low"
+
+df["Salary_Category"] = df["Salary"].apply(salary_category)
+
+#map() Function : Used to replace values using a dictionary.
+
+gender = {
+    "Ram":"Male",
+    "Shyam":"Male",
+    "Kewat":"Male",
+    "Riya":"Female"
+}
+
+df["Gender"] = df["Name"].map(gender)
+
+"""
+Binning (Grouping Numeric Values)
+Convert continuous values into categories.
+Example: Age → Young / Middle / Senior
+Using cut():
+"""
+
+df["Age_Group"] = pd.cut(
+    df["Age"],
+    bins=[0,25,40,60],
+    labels=["Young","Middle","Senior"]
+)
+
+#GroupBy & Aggregation (Core of EDA)
+"""
+Goal: summarize patterns in data.
+
+GroupBy allows you to answer questions like:
+
+- average salary by department
+- total sales by region
+- number of customers by city
+"""
+
+#GROUP BY
+df.groupby("Age")
+
+#COUNT
+df.groupby("Department")["Name"].count()
+
+#Table Merging
+
+"""
+
+merge() --> SQL JOIN - LET,FULL ,RIGHT INNER ,OUTER
+
+import pandas as pd
+
+employees = pd.DataFrame({
+    "EmpID":[1,2,3],
+    "Name":["Ram","Shyam","Riya"]
+})
+
+salary = pd.DataFrame({
+    "EmpID":[1,2,3],
+    "Salary":[40000,50000,60000]
+})
+
+merged = pd.merge(employees, salary, on="EmpID")
+print(merged)
+
+concat() : concat() — Combine Rows or Columns
+         : concat() stacks data.
+
+Example datasets.
+
+df1 = pd.DataFrame({
+    "Name":["Ram","Shyam"],
+    "Age":[23,45]
+})
+
+df2 = pd.DataFrame({
+    "Name":["Riya","Aman"],
+    "Age":[21,30]
+})
+
+pd.concat([df1, df2])
+
+join()
+
+join() — Index-Based Merge 
+       — join() merges using index values.
+
+Example: df1.join(df2)
+
+"""
