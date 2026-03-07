@@ -1,0 +1,192 @@
+PHASE 1 (Days 1–30) — Applied Machine Learning + Deployment
+
+Goal: Become comfortable building and deploying ML systems.
+
+Week 1 — Data & ML Core
+
+Learn:
+
+NumPy (vectorization deeply)
+Pandas (groupby, merge, missing values)
+Matplotlib / Seaborn
+Basic statistics for ML
+
+Build:
+
+Exploratory Data Analysis notebook
+Clean messy dataset properly
+Dataset suggestions:
+Kaggle housing dataset
+Loan default dataset
+
+Week 2 — Classical ML
+
+Learn:
+
+Linear Regression
+Logistic Regression
+KNN
+Decision Trees
+Random Forest
+Bias-Variance tradeoff
+Cross validation
+
+Implement: At least one algorithm from scratch (linear regression)
+
+Week 3 — Feature Engineering & Model Optimization
+
+Learn:
+Feature scaling
+Encoding categorical variables
+GridSearchCV
+ROC-AUC
+Confusion matrix
+Overfitting handling
+
+Week 4 — Deployment Project 1
+Project: End-to-End ML API
+
+Example:
+
+House Price Predictor
+Loan Approval System
+Accident Risk Prediction (good for your background)
+
+Stack:Scikit-Learn,FastAPI,Docker, Deploy on Render / Railway
+
+Deliverables: REST API,Frontend form,Dockerized app,Public link
+
+If it’s not deployed, it doesn’t count.
+
+PHASE 2 (Days 31–60) — Deep Learning & PyTorch
+
+Goal: Understand neural networks deeply and implement real systems.
+Week 5 — Neural Network Foundations
+
+Learn:
+
+Linear algebra (matrix multiplication intuition)
+Gradient descent
+Backpropagation
+Activation functions
+
+Implement: Neural network from scratch using NumPy
+
+Week 6 — PyTorch
+
+Learn:
+
+Tensors
+Autograd
+Model class
+Optimizers
+Loss functions
+Training loop architecture
+
+Week 7 — CNNs
+
+Learn:
+
+Convolution operation
+Pooling
+Feature maps
+Why CNN works
+
+Build: Image classifier (CIFAR-10 or custom dataset)
+
+Week 8 — Deployment Project 2
+Project: AI Image Classification Web App
+
+Users: Upload image
+
+Model predicts category
+
+Stack:
+PyTorch
+FastAPI
+React frontend (you already know)
+Docker
+
+Optional:
+
+Add logging
+Add monitoring
+Now you’re moving toward AI Engineer level.
+
+PHASE 3 (Days 61–90) — LLMs, Modern AI & Production Systems
+
+Goal: Build modern AI products.
+
+Week 9 — Transformers & Attention
+
+Learn:
+
+Why RNN fails
+Attention mechanism
+Transformer architecture (conceptual, not math-heavy)
+Embeddings
+
+Vector similarity
+
+Week 10 — LLM Integration
+
+Learn:
+
+OpenAI API
+Prompt engineering
+Tokenization
+Rate limiting
+Cost optimization
+
+Build:
+
+Smart Q&A chatbot
+
+Week 11 — RAG Systems
+
+Learn:
+
+Vector databases
+FAISS
+Chunking strategies
+Embedding models
+
+Retrieval pipeline
+
+Build: Custom document chatbot
+
+Upload PDF
+Ask questions
+Get context-aware answers
+
+Week 12 — Capstone AI Product
+Project: Full AI SaaS
+
+Examples:
+
+Resume Analyzer
+AI Code Reviewer
+Legal Document Assistant
+AI-Powered Learning Platform
+Personal Finance AI Advisor
+
+Stack: FastAPI backend
+
+React frontend
+Vector DB
+LLM API
+Auth system
+Deployed publicly
+
+This project should: Be production-ready,Have authentication,Have logging,Have rate limiting
+
+Now you are not “learning AI”.
+You are building AI systems.
+
+What You Will Have After 90 Days
+
+3–4 deployed AI projects
+ML + Deep Learning understanding
+LLM + RAG knowledge
+Production deployment skills
+AI engineering portfolio
