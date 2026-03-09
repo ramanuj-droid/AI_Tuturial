@@ -1,0 +1,183 @@
+ML Divides problem into 2 sub categories
+
+Classification : predict categories
+
+| Input       | Output            |
+| ----------- | ----------------- |
+| Email text  | Spam / Not Spam   |
+| Image       | Cat / Dog         |
+| Transaction | Fraud / Not Fraud |
+
+Regression : Predict continuous values
+
+Real world:
+
+• House price prediction
+• Stock price forecasting
+• Sales forecasting
+
+
+Simple Linear Regression : y = mx +b
+
+• x = input feature
+• y = predicted output
+• m = slope (weight)
+• b = intercept (bias)
+
+Ex : house_price = size *m + b
+
+| House Size | Price  |
+| ---------- | ------ |
+| 800        | 150000 |
+| 1000       | 180000 |
+| 1200       | 210000 |
+
+Price
+  |
+260k       *
+210k     *
+180k   *
+150k *
+   +----------------
+      800 1000 1200
+           Size
+
+for Mutiple : Y = y=w1​x1​ + w2​x2 ​+ w3​x3 ​+b
+- 2D : Line , 3D : Plane 
+
+#COST FUNCTION  
+
+#Machine learning model knows it is wrong and how it measures that error,
+
+| x | Actual y | Predicted y |
+| - | -------- | ----------- |
+| 1 | 8        | 5           |
+| 2 | 11       | 8           |
+| 3 | 14       | 11          |
+
+Residual = Y(actual) - Y(predicted)
+
+- MSE =  1/n sum of [(Residual)^2]
+
+*Loss Function (Important Term)
+
+The error metric used during training is called the Loss Function.
+For Linear Regression: Loss = Mean Squared Error
+Training goal: Find w and b that minimize the loss
+
+Mathematically: min(1/n x sum(y -(wx + b))^2)
+
+*GRADIENT DESCENT
+
+How do we find the best values of w and b?
+
+- That is solved by optimization, and the most important optimization algorithm in ML is Gradient Descent.
+
+Loss
+ |
+ |        *
+ |      *   *
+ |    *       *          This shape is called a convex curve.The lowest point is the minimum loss.
+ |  *           *        Gradient Descent moves step-by-step toward this minimum.
+ |*_______________*
+        w
+
+Gradient = direction of steepest increase.
+
+But we want minimum loss, so we move in the opposite direction.
+
+Update rule:
+
+𝑤 = 𝑤 − 𝛼[∂𝐿/∂𝑤]
+𝑏 = 𝑏 − 𝛼[∂𝐿/∂𝑏]
+
+Where:
+α      ==  learning rate 
+∂L/∂w  ==  gradient 
+L      ==  loss 
+
+Learning Rate : Learning rate determines step size.
+
+Too small : very slow learning
+Too large : oscillation / divergence
+good learning rate → smooth convergence
+
+Typical values: 0.1 ,0.01 , 0.001
+
+Loss function: 𝐿=1/𝑛 ∑(𝑦−(𝑤𝑥 +𝑏))
+
+Derivatives become:
+
+∂𝐿/∂𝑤 = −2/𝑛∑𝑥(𝑦−𝑦^))
+∂𝐿/∂𝑏 = −2/𝑛∑(𝑦−𝑦^))
+
+1 Initialize w and b randomly
+2 Predict y
+3 Compute loss
+4 Compute gradients
+5 Update parameters
+6 Repeat until convergence
+
+Matrix Representation of Data
+
+#Instead of treating features individually, we represent the dataset as a matrix.
+
+Dataset example:
+
+size	bedrooms	price
+1000	2	      200000
+1200	3	      240000
+1500	3	      300000
+
+# Feature matrix:
+
+𝑋 =[1000	 2
+   1200  3
+   1500  3]
+
+
+Target vector:
+
+𝑦 =[ 200000 240000 300000]
+
+Weights:𝑤 =[𝑤1
+            𝑤2]
+
+#Linear Regression in Matrix Form
+
+Instead of:
+
+𝑦 =𝑤1𝑥1 + 𝑤2𝑥2 +𝑏
+𝑦 = 𝑋𝑤 + 𝑏
+
+#Symbol	Meaning
+X	feature matrix
+w	weight vector
+b	bias
+
+Suppose:
+
+100 samples
+3 features
+
+#Matrix shapes:
+
+X → (100,3)
+w → (3,1)
+y → (100,1)
+
+Prediction:   y_pred = X @ w + b
+
+#Vectorized Loss Function
+
+Mean Squared Error becomes:
+
+                                    𝐿 =1/𝑛(𝑦 −𝑋𝑤)𝑇(𝑦 −𝑋𝑤)
+
+#Vectorized Gradient
+
+Gradient formulas:
+
+𝑑𝑤 = 2/𝑛(𝑋𝑇(𝑋𝑤−𝑦)
+𝑑𝑏 = 2/𝑛∑(𝑋𝑤−𝑦)
+
