@@ -1,0 +1,56 @@
+Logistic Regressio
+
+Classification → Predict categories
+Logistic Regression is the foundation of classification in ML.
+It solves classification problems.
+
+| Input        | Output               |
+| ------------ | -------------------- |
+| Email        | Spam / Not Spam      |
+| Transaction  | Fraud / Not Fraud    |
+| Student data | Pass / Fail          |
+| Medical data | Disease / No Disease |
+
+We use Logistic Regression because-linear regression is not bounded.
+
+Sigmoid Function
+𝜎(𝑧) =1/(1+𝑒^−𝑧)
+
+Where: z = wx + b
+
+| Input z             | Output |
+| ------------------- | ------ |
+| very large positive | ≈ 1    |
+| 0                   | 0.5    |
+| very large negative | ≈ 0    |
+
+0.9 → high chance of truth
+0.2 → low chance of truth
+0.5 → Decision Boundary
+
+1 |        ________
+  |      /
+  |    /
+0.5|--- decision boundary
+  |  /
+  | /
+0 |________
+
+Logistic Regression Model
+
+Full model:
+
+1)𝑧 =𝑤𝑥 + 𝑏
+2)𝑦 =𝜎(𝑧)
+
+Steps:
+
+1. Compute linear output (z)
+2. Apply sigmoid
+3. Get probability
+4. Apply threshold → class
+
+Cost Function (Cross-Entropy)
+
+Linear Regression → MSE loss
+Logistic Regression → Cross-Entropy loss
